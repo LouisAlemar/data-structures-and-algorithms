@@ -1,5 +1,8 @@
-// Time Complexity: O(n log n)
-// Space Complexity: O(n)
+/**
+ * Name: Merge Sort
+ * Time Complexity: O(n log n)
+ * Space Complexity: O(n)
+ */
 
 function merge(arr1, arr2) {
   let results = [];
