@@ -1,5 +1,8 @@
-// Time Complexity: O(n^2)
-// Space Complexity: O(1)
+/**
+ * Name: Bubble Sort
+ * Time Complexity: O(n^2)
+ * Space Complexity: O(1)
+ */
 
 function bubbleSort(arr) {
   var noSwaps;

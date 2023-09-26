@@ -1,5 +1,8 @@
-// Time Complexity: O(n^2)
-// Space Complexity: O(1)
+/**
+ * Name: Selection Sort
+ * Time Complexity: O(n^2)
+ * Space Complexity: O(1)
+ */
 
 function selectionSort(arr) {
   for (var i = 0; i < arr.length; i++) {

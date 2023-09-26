@@ -1,5 +1,8 @@
-// Time Complexity: O(n^2)
-// Space Complexity: O(1)
+/**
+ * Name: Insertion Sort
+ * Time Complexity: O(n^2)
+ * Space Complexity: O(1)
+ */
 
 function insertionSort(arr) {
   for (var i = 1; i < arr.length; i++) {
