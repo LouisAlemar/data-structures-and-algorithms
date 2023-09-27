@@ -77,9 +77,26 @@ class DoublyLinkedList {
 
     return oldHead;
   }
+
+  // add node to beginning of linked list
+  unshift(val) {
+    let newNode = new Node(val);
+
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
+    } else {
+      this.head.prev = newNode;
+      newNode.next = this.head;
+      this.head = newNode;
+    }
+    this.length++;
+
+    return this;
+  }
 }
 
 let list = new DoublyLinkedList();
-list.push(10);
-list.push(20);
-list.push(30);
+list.push("Steph Curry");
+list.push("Kevin Durant");
+list.push("Klay Thompson");
