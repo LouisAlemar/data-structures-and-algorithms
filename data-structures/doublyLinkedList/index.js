@@ -57,7 +57,7 @@ class DoublyLinkedList {
     return poppedNode;
   }
 
-  // remove node from beginning of linked list
+  // remove node from start of linked list
   shift() {
     if (!this.head) {
       return undefined;
@@ -78,7 +78,7 @@ class DoublyLinkedList {
     return oldHead;
   }
 
-  // add node to beginning of linked list
+  // add node to start of linked list
   unshift(val) {
     let newNode = new Node(val);
 
@@ -93,6 +93,32 @@ class DoublyLinkedList {
     this.length++;
 
     return this;
+  }
+
+  // get node at given index
+  get(index) {
+    if (index < 0 || index >= this.length) {
+      return null;
+    }
+
+    if (index <= this.length / 2) {
+      let count = 0;
+      let current = this.head;
+
+      while (count !== index) {
+        current = current.next;
+        count++;
+      }
+    } else {
+      let count = this.length - 1;
+      let current = this.tail;
+
+      while (count !== index) {
+        current = current.prev;
+        count--;
+      }
+    }
+    return current;
   }
 }
 

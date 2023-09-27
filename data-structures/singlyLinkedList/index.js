@@ -3,7 +3,7 @@
  * Time Complexity:
  *      Insertion: O(1)
  *      Removal:
- *            From beginning of list: O(1)
+ *            From start of list: O(1)
  *            From end of list: O(n)
  *      Searching: O(n)
  *      Access: O(n)
@@ -65,7 +65,7 @@ class SinglyLinkedList {
     return current;
   }
 
-  // remove node from beginning of linked list
+  // remove node from start of linked list
   shift() {
     if (!this.head) {
       return undefined;
@@ -83,7 +83,7 @@ class SinglyLinkedList {
     return currentHead;
   }
 
-  // add node to beginning of linked list
+  // add node to start of linked list
   unshift(val) {
     let newNode = new Node(val);
 
