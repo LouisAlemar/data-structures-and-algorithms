@@ -1,7 +1,7 @@
 /**
  * Name: Quick Sort
  * Time Complexity: O(n^2)
- * Space Complexity: O(log n)
+ * Space Complexity: O(log(n))
  */
 
 function pivot(arr, start = 0, end = arr.length - 1) {
