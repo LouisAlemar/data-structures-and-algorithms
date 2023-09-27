@@ -1,6 +1,10 @@
 /**
- * Name: Doubly Linked List
+ * Name: Singly Linked List
  * Time Complexity:
+ *      Insertion: O(1)
+ *      Removal: O(1)
+ *      Searching: O(n)
+ *      Access: O(n)
  */
 
 class Node {
@@ -38,7 +42,7 @@ class DoublyLinkedList {
   // remove node from end of linked list
   pop() {
     if (!this.head) {
-      return undefined;
+      return false;
     }
 
     let poppedNode = this.tail;
@@ -60,7 +64,7 @@ class DoublyLinkedList {
   // remove node from start of linked list
   shift() {
     if (!this.head) {
-      return undefined;
+      return false;
     }
 
     let oldHead = this.head;
@@ -98,7 +102,7 @@ class DoublyLinkedList {
   // get node at given index
   get(index) {
     if (index < 0 || index >= this.length) {
-      return null;
+      return false;
     }
 
     let current, count;
@@ -162,9 +166,33 @@ class DoublyLinkedList {
 
     return true;
   }
-}
 
-let list = new DoublyLinkedList();
-list.push("Steph Curry");
-list.push("Kevin Durant");
-list.push("Klay Thompson");
+  // remove node at given index
+  remove(index) {
+    if (index < 0 || index >= this.length) {
+      return false;
+    }
+
+    if (index === 0) {
+      this.shift();
+      return true;
+    }
+
+    if (index === this.length - 1) {
+      this.pop();
+      return true;
+    }
+
+    let removedNode = this.get(index);
+    let beforeNode = removedNode.prev;
+    let afterNode = removedNode.next;
+
+    beforeNode.next = afterNode;
+    afterNode.prev = beforeNode;
+    afterNode = null;
+    beforeNode = null;
+    this.length--;
+
+    return removedNode;
+  }
+}

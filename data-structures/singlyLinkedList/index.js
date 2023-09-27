@@ -42,7 +42,7 @@ class SinglyLinkedList {
   // remove node from end of linked list
   pop() {
     if (!this.head) {
-      return undefined;
+      return false;
     }
 
     let current = this.head;
@@ -68,7 +68,7 @@ class SinglyLinkedList {
   // remove node from start of linked list
   shift() {
     if (!this.head) {
-      return undefined;
+      return false;
     }
 
     let currentHead = this.head;
@@ -102,7 +102,7 @@ class SinglyLinkedList {
   // get node at given index
   get(index) {
     if (index < 0 || index >= this.length) {
-      return null;
+      return false;
     }
 
     let counter = 0;
@@ -159,7 +159,7 @@ class SinglyLinkedList {
   // remove node at given index
   remove(index) {
     if (index < 0 || index > this.length) {
-      return undefined;
+      return false;
     }
 
     if (index === this.length - 1) {
