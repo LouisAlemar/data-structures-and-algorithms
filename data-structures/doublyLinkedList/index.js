@@ -101,17 +101,19 @@ class DoublyLinkedList {
       return null;
     }
 
+    let current, count;
+
     if (index <= this.length / 2) {
-      let count = 0;
-      let current = this.head;
+      count = 0;
+      current = this.head;
 
       while (count !== index) {
         current = current.next;
         count++;
       }
     } else {
-      let count = this.length - 1;
-      let current = this.tail;
+      count = this.length - 1;
+      current = this.tail;
 
       while (count !== index) {
         current = current.prev;
@@ -119,6 +121,17 @@ class DoublyLinkedList {
       }
     }
     return current;
+  }
+
+  // replace node at given index
+  set(index, val) {
+    let foundNode = this.get(index);
+
+    if (foundNode !== null) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
   }
 }
 
