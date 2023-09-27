@@ -3,7 +3,7 @@
  * Time Complexity:
  *      Insertion: O(1)
  *      Removal:
- *            From beginning of list: O(1)
+ *            From start of list: O(1)
  *            From end of list: O(n)
  *      Searching: O(n)
  *      Access: O(n)
@@ -29,7 +29,7 @@ class SinglyLinkedList {
 
     if (!this.head) {
       this.head = newNode;
-      this.tail = this.head;
+      this.tail = newNode;
     } else {
       this.tail.next = newNode;
       this.tail = newNode;
@@ -42,7 +42,7 @@ class SinglyLinkedList {
   // remove node from end of linked list
   pop() {
     if (!this.head) {
-      return undefined;
+      return false;
     }
 
     let current = this.head;
@@ -65,10 +65,10 @@ class SinglyLinkedList {
     return current;
   }
 
-  // remove node from beginning of linked list
+  // remove node from start of linked list
   shift() {
     if (!this.head) {
-      return undefined;
+      return false;
     }
 
     let currentHead = this.head;
@@ -83,7 +83,7 @@ class SinglyLinkedList {
     return currentHead;
   }
 
-  // add node to beginning of linked list
+  // add node to start of linked list
   unshift(val) {
     let newNode = new Node(val);
 
@@ -102,7 +102,7 @@ class SinglyLinkedList {
   // get node at given index
   get(index) {
     if (index < 0 || index >= this.length) {
-      return null;
+      return false;
     }
 
     let counter = 0;
@@ -159,7 +159,7 @@ class SinglyLinkedList {
   // remove node at given index
   remove(index) {
     if (index < 0 || index > this.length) {
-      return undefined;
+      return false;
     }
 
     if (index === this.length - 1) {
