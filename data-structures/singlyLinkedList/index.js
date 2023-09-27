@@ -1,3 +1,14 @@
+/**
+ * Name: Singly Linked List
+ * Time Complexity:
+ *      Insertion: O(1)
+ *      Removal:
+ *            From beginning of list: O(1)
+ *            From end of list: O(n)
+ *      Searching: O(n)
+ *      Access: O(n)
+ */
+
 class Node {
   constructor(val) {
     this.val = val;
@@ -187,8 +198,3 @@ class SinglyLinkedList {
     return this;
   }
 }
-
-let list = new SinglyLinkedList();
-list.push("hello");
-list.push("world");
-list.push("!");
