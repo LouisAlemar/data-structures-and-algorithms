@@ -1,5 +1,5 @@
 /**
- * Name: Singly Linked List
+ * Name: Doubly Linked List
  * Time Complexity:
  *      Insertion: O(1)
  *      Removal: O(1)
