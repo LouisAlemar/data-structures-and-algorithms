@@ -133,6 +133,35 @@ class DoublyLinkedList {
     }
     return false;
   }
+
+  // insert node at given index
+  insert(index, val) {
+    if (index < 0 || index > this.length) {
+      return false;
+    }
+
+    if (index === 0) {
+      this.unshift(val);
+      return true;
+    }
+
+    if (index === this.length) {
+      this.push(val);
+      return true;
+    }
+
+    let newNode = new Node(val);
+    let beforeNode = this.get(index - 1);
+    let afterNode = beforeNode.next;
+
+    beforeNode.next = newNode;
+    newNode.prev = beforeNode;
+    newNode.next = afterNode;
+    afterNode.prev = newNode;
+    this.length++;
+
+    return true;
+  }
 }
 
 let list = new DoublyLinkedList();
