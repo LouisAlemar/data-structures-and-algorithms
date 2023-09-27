@@ -134,15 +134,40 @@ class SinglyLinkedList {
     }
 
     let newNode = new Node(val);
-    let prev = this.get(index - 1);
-    let temp = prev.next;
+    let previousNode = this.get(index - 1);
+    let temp = previousNode.next;
 
-    prev.next = newNode;
+    previousNode.next = newNode;
     newNode.next = temp;
 
     this.length++;
 
     return true;
+  }
+
+  // remove node at given index
+  remove(index) {
+    if (index < 0 || index > this.length) {
+      return undefined;
+    }
+
+    if (index === this.length - 1) {
+      this.pop();
+      return true;
+    }
+
+    if (index === 0) {
+      this.shift();
+      return true;
+    }
+
+    let previousNode = this.get(index - 1);
+    let removed = previousNode.next;
+    previousNode.next = removed.next;
+
+    this.length--;
+
+    return removed;
   }
 }
 
