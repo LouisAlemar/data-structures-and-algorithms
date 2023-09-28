@@ -33,6 +33,26 @@ class Stack {
 
     return this.size;
   }
+
+  // remove node to end of stack
+  pop() {
+    if (!this.first) {
+      return null;
+    }
+
+    let temp = this.first;
+
+    if (this.size === 1) {
+      this.first = null;
+      this.last = null;
+    } else {
+      this.first = this.first.next;
+      temp.next = null;
+    }
+    this.size--;
+
+    return temp.val;
+  }
 }
 
 let stack = new Stack();
