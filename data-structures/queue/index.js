@@ -1,5 +1,5 @@
 /**
- * Name: Stack
+ * Name: Queue
  * Time Complexity:
  *      Insertion: O(1)
  *      Removal: O(1)
@@ -14,32 +14,31 @@ class Node {
   }
 }
 
-class Stack {
+class Queue {
   constructor() {
     this.first = null;
     this.last = null;
     this.size = 0;
   }
 
-  // add node to end of stack
-  push(val) {
+  // add node to end of queue
+  enqueue(val) {
     let newNode = new Node(val);
 
     if (!this.first) {
       this.first = newNode;
       this.last = newNode;
     } else {
-      let temp = this.first;
-      this.first = newNode;
-      this.first.next = temp;
+      this.last.next = newNode;
+      this.last = newNode;
     }
     this.size++;
 
     return this.size;
   }
 
-  // remove node from end of stack
-  pop() {
+  // remove node from start of queue
+  dequeue() {
     if (!this.first) {
       return null;
     }
