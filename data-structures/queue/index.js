@@ -32,4 +32,24 @@ class Queue {
 
     return this.size;
   }
+
+  // remove node from start of queue
+  dequeue() {
+    if (!this.first) {
+      return null;
+    }
+
+    let temp = this.first;
+
+    if (this.size === 1) {
+      this.first = null;
+      this.last = null;
+    } else {
+      this.first = this.first.next;
+      temp.next = null;
+    }
+    this.size--;
+
+    return temp.val;
+  }
 }

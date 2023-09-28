@@ -38,7 +38,7 @@ class Stack {
     return this.size;
   }
 
-  // remove node to end of stack
+  // remove node from end of stack
   pop() {
     if (!this.first) {
       return null;
