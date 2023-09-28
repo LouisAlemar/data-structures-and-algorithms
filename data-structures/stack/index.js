@@ -58,5 +58,3 @@ class Stack {
     return temp.val;
   }
 }
-
-let stack = new Stack();
