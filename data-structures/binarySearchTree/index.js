@@ -140,6 +140,27 @@ class BinarySearchTree {
 
     return data;
   }
+
+  // depth first search - post order
+  DFSPostOrder() {
+    let data = [];
+
+    function traverse(node) {
+      if (node.left) {
+        traverse(node.left);
+      }
+
+      if (node.right) {
+        traverse(node.right);
+      }
+
+      data.push(node.val);
+    }
+
+    traverse(this.root);
+
+    return data;
+  }
 }
 
 let tree = new BinarySearchTree();
