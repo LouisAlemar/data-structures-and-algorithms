@@ -5,7 +5,7 @@
 
 class MaxBinaryHeap {
   constructor() {
-    this.values = [41, 39, 33, 18, 27, 12];
+    this.values = [];
   }
 
   // add value to max binary heap
@@ -89,5 +89,3 @@ class MaxBinaryHeap {
     }
   }
 }
-
-let heap = new MaxBinaryHeap();
