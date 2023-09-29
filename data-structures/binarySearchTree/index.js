@@ -97,7 +97,7 @@ class BinarySearchTree {
   }
 
   // breadth first search
-  breadthFirstSearch() {
+  BFS() {
     let node = this.root;
     let data = [];
     let queue = [];
@@ -116,6 +116,27 @@ class BinarySearchTree {
         queue.push(node.right);
       }
     }
+
+    return data;
+  }
+
+  // depth first search - pre order
+  DFSPreOrder() {
+    let data = [];
+
+    function traverse(node) {
+      data.push(node.val);
+
+      if (node.left) {
+        traverse(node.left);
+      }
+
+      if (node.right) {
+        traverse(node.right);
+      }
+    }
+
+    traverse(this.root);
 
     return data;
   }
