@@ -1,25 +1,31 @@
 /**
- * Name: Max Binary Heap
+ * Name: Priority Queue
  * Time Complexity:
  *      Insertion: O(log(n))
  *      Removal: O(log(n))
  *      Searching: O(n)
  */
 
-class MaxBinaryHeap {
+class Node {
+  constructor(val, priority) {
+    this.val = val;
+    this.priority = priority;
+  }
+}
+
+class PriorityQueue {
   constructor() {
     this.values = [];
   }
 
-  // add value to max binary heap
-  insert(element) {
-    this.values.push(element);
+  // add value to priority queue
+  enqueue(val, priority) {
+    let newNode = new Node(val, priority);
+    this.values.push(newNode);
     this.bubbleUp();
-
-    return this.values;
   }
 
-  // puts element in correct spot in the max binary heap
+  // puts element in correct spot in the priority queue
   bubbleUp() {
     let index = this.values.length - 1;
     const element = this.values[index];
@@ -28,7 +34,7 @@ class MaxBinaryHeap {
       let parentIndex = Math.floor((index - 1) / 2);
       let parent = this.values[parentIndex];
 
-      if (element <= parent) {
+      if (element.priority >= parent.priority) {
         break;
       } else {
         this.values[parentIndex] = element;
@@ -38,9 +44,9 @@ class MaxBinaryHeap {
     }
   }
 
-  // remove max value from max binary heap
-  extractMax() {
-    const max = this.values[0];
+  // remove min value from priority queue
+  dequeue() {
+    const min = this.values[0];
     const end = this.values.pop();
 
     if (this.values.length > 0) {
@@ -48,10 +54,10 @@ class MaxBinaryHeap {
       this.sinkDown();
     }
 
-    return max;
+    return min;
   }
 
-  // puts element in correct spot in the max binary heap
+  // puts element in correct spot in the priority queue
   sinkDown() {
     let index = 0;
     const length = this.values.length;
@@ -67,7 +73,7 @@ class MaxBinaryHeap {
       if (leftChildIndex < length) {
         leftChild = this.values[leftChildIndex];
 
-        if (leftChild > element) {
+        if (leftChild.priority < element.priority) {
           swap = leftChildIndex;
         }
       }
@@ -75,8 +81,8 @@ class MaxBinaryHeap {
       if (rightChildIndex < length) {
         rightChild = this.values[rightChildIndex];
         if (
-          (swap === null && rightChild > element) ||
-          (swap !== null && rightChild > leftChild)
+          (swap === null && rightChild.priority < element.priority) ||
+          (swap !== null && rightChild.priority < leftChild.priority)
         ) {
           swap = rightChildIndex;
         }
