@@ -32,6 +32,15 @@ class Graph {
       this.adjacencyList[vertex] = [];
     }
   }
+
+  // add an edge to graph
+  addEdge(v1, v2) {
+    this.adjacencyList[v1].push(v2);
+    this.adjacencyList[v2].push(v1);
+  }
 }
 
 let g = new Graph();
+g.addVertex("Tokyo");
+g.addVertex("Dallas");
+g.addVertex("Aspen");
