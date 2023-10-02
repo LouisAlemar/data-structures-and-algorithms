@@ -86,15 +86,3 @@ class HashTable {
     return keysArr;
   }
 }
-
-let ht = new HashTable();
-ht.set("maroon", "#800000");
-ht.set("yellow", "#FFFF00");
-ht.set("olive", "#808000");
-ht.set("salmon", "#FA8072");
-ht.set("lightcoral", "#F08080");
-ht.set("mediumvioletred", "#C71585");
-ht.set("plum", "#DDA0DD");
-ht.set("purple", "#DDA0DD");
-ht.set("violet", "#DDA0DD");
-ht.set("violet", "#303030");
